@@ -8,8 +8,13 @@ mostrado no projeto ao lado
 ### Exemplo
 
 Enter rectangle width and height:
+
 3.00
+
 4.00
+
 AREA = 12.00
+
 PERIMETER = 14.00
+
 DIAGONAL = 5.00
