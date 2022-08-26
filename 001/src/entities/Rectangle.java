@@ -20,7 +20,6 @@ public class Rectangle {
     public String toString(){
         return "AREA = " 
             + String.format("%.2f%n", area())
-            + String.format("%n")
             + "PERIMETER = "
             + String.format("%.2f%n", perimeter())
             + "DIAGONAL = "
