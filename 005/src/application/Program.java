@@ -27,9 +27,9 @@ public class Program {
         if (option == 'y'){
 
             System.out.print("Enter initial deposit value: ");
-            double amount = sc.nextDouble();
+            double initialDeposit = sc.nextDouble();
 
-            account = new ProductService(accountNumber, name, amount);
+            account = new ProductService(accountNumber, name, initialDeposit);
         
         }
 

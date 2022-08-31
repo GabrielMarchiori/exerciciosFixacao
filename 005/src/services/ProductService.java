@@ -7,10 +7,10 @@ public class ProductService {
     private String name;
     private double amount;
 
-    public ProductService(int accountNumber, String name, double amount) {
+    public ProductService(int accountNumber, String name, double initialDeposit) {
         this.accountNumber = accountNumber;
         this.name = name;
-        this.amount = amount;
+        deposit(initialDeposit);
     }
 
     public ProductService(int accountNumber, String name) {
@@ -21,6 +21,19 @@ public class ProductService {
     public void setName(String name) {
         this.name = name;
     }
+
+    public int getAccountNumber() {
+        return accountNumber;
+    }
+    
+    public String getName() {
+        return name;
+    }
+   
+    public double getAmount() {
+        return amount;
+    }
+
 
     public void deposit(double deposit){
         amount+=deposit;
@@ -40,5 +53,5 @@ public class ProductService {
                 name +
                 String.format(", Balance: $ %.2f %n", amount);
     }
-    
+
 }
