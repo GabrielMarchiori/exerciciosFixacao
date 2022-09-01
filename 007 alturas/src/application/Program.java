@@ -13,13 +13,13 @@ public class Program {
         Scanner sc = new Scanner(System.in);
 
         int size = sc.nextInt();
-        People[] iPeoples = new People[size];
+        People[] iPeople = new People[size];
         
 
         for(int repeat=0; repeat<size; repeat++){
             sc.nextLine();
-            int numberPeoples = repeat+1;
-            System.out.println("Dados da " + numberPeoples + "a pessoa: ");
+            int numberPeople = repeat+1;
+            System.out.println("Dados da " + numberPeople + "a pessoa: ");
             
             System.out.print("Nome: ");
             String name = sc.nextLine();
@@ -27,13 +27,13 @@ public class Program {
             int age = sc.nextInt();
             System.out.print("Altura: ");
             double height = sc.nextDouble();
-            iPeoples[repeat] = new People(name, age, height);
+            iPeople[repeat] = new People(name, age, height);
         }
 
         double avg = 0;
 
         for(int repeat=0; repeat<size; repeat++){
-            avg += iPeoples[repeat].getHeight();
+            avg += iPeople[repeat].getHeight();
         }
         
         avg /= size;
@@ -42,7 +42,7 @@ public class Program {
         double sixteen = 0;
 
         for(int repeat=0; repeat<size; repeat++){
-            if (iPeoples[repeat].getAge()<16){
+            if (iPeople[repeat].getAge()<16){
                 sixteen++;
             }
         }
@@ -52,8 +52,8 @@ public class Program {
         System.out.printf("Pessoas com menos de 16 anos: %.1f%% %n", sixteen);
 
         for(int repeat=0; repeat<size; repeat++){
-            if (iPeoples[repeat].getAge()<16){
-                System.out.println(iPeoples[repeat].getName());
+            if (iPeople[repeat].getAge()<16){
+                System.out.println(iPeople[repeat].getName());
             }
         }
 
