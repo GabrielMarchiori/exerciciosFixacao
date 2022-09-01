@@ -6,7 +6,7 @@ bem como os nomes dessas pessoas caso houver.
 
 ### Exemplo
 
-Quantas pessoas serao digitadas? 5
+Quantas pessoas serão digitadas? 5
 <br>
 Dados da 1a pessoa:
 <br>
