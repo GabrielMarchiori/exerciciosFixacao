@@ -17,7 +17,9 @@ public class Program {
             sc.nextLine();
             int numberPeople = repeat+1;
             System.out.println("Dados da "+numberPeople+"a pessoa:");
+            System.out.print("Name: ");
             String name = sc.nextLine();
+            System.out.print("Idade: ");
             int age = sc.nextInt();
             iPeople[repeat] = new People(name, age);
         }
