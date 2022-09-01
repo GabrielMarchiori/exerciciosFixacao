@@ -1,11 +1,11 @@
 package services;
 
-public class BoardingHouse {
+public class Rooms {
 
     private String name;
     private String email;
 
-    public BoardingHouse(String name, String email) {
+    public Rooms(String name, String email) {
         this.name = name;
         this.email = email;
     }

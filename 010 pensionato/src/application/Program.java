@@ -2,7 +2,7 @@ package application;
 
 import java.util.Scanner;
 
-import services.BoardingHouse;
+import services.Rooms;
 
 public class Program {
     
@@ -12,7 +12,7 @@ public class Program {
 
         System.out.print("How many rooms will be rented? ");
         int size=sc.nextInt();
-        BoardingHouse[] rooms = new BoardingHouse[10];
+        Rooms[] boardingHouse = new Rooms[10];
 
         for(int repeat=0; repeat<size; repeat++){
             sc.nextLine();
@@ -23,17 +23,29 @@ public class Program {
             String name = sc.nextLine();
             System.out.print("Email: ");
             String email = sc.next();
-            System.out.print("Room: ");
-            int room = sc.nextInt();
-            rooms[room]= new BoardingHouse(name, email);
+            
+            int repeat2=0;
+            int room=0;
+            do{
+                if(repeat2>0){
+                    System.out.println();
+                    System.out.println("Occupied room re-enter");
+                }
+                System.out.print("Room: ");
+                room = sc.nextInt();
+
+                repeat2+=1;              
+            }while(boardingHouse[room]!=null);
+                boardingHouse[room]= new Rooms(name, email);
+            
         }
 
-        System.out.println();
+        System.out.println(  );
         System.out.println("Busy rooms:");
 
         for(int repeat=0; repeat<10; repeat++){
-            if(rooms[repeat]!=null){
-                System.out.println(repeat+": "+rooms[repeat]);
+            if(boardingHouse[repeat]!=null){
+                System.out.println(repeat+": "+boardingHouse[repeat]);
             }
         }
 
