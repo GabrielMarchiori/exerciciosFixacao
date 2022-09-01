@@ -2,7 +2,7 @@ package application;
 
 import java.util.Scanner;
 
-import services.Rooms;
+import entities.Rooms;
 
 public class Program {
     
