@@ -79,12 +79,17 @@ public class Order {
     }
 
     public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for(OrderItem item : orderItens){
+            sb.append(item);
+        }
+        
         return "Order moment: "+ getMoment() + String.format("%n")
                 + "Order status: "+getStatus() + String.format("%n")
                 + "Cliente: " + client + String.format("%n")
                 + "Order items:" + String.format("%n")
-                + orderItens + String.format("%n")
-                + total();
+                + sb.toString()                
+                + "Total price: $" + total();
 
     }
 

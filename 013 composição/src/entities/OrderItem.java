@@ -13,7 +13,7 @@ public class OrderItem {
     public OrderItem(Integer quantity, Double price, Product product) {
         this.quantity = quantity;
         this.price = price;
-        this.product = new Product();
+        this.product = product;
     }
 
     public Integer getQuantity() {
@@ -45,7 +45,7 @@ public class OrderItem {
     }
 
     public String toString() {
-        return product.getName() + ", Quantity: " + getQuantity()
+        return getProduct().getName() + ", Quantity: " + getQuantity()
                 + " Subtotal: $" + subTotal() 
                 + String.format("%n"); 
     }

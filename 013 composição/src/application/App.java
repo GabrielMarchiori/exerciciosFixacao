@@ -3,7 +3,6 @@ package application;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -46,20 +45,20 @@ public class App {
         for(int repeat = 1; repeat<=totalItens; repeat++){
             System.out.println("Enter #"+repeat+" item data:");
             System.out.print("Product name: ");
-            sc.next();
+            sc.nextLine();
             String productName = sc.nextLine();
             
             System.out.print("Product price: ");
-            double price = sc.nextDouble();
+            Double price = sc.nextDouble();
 
             System.out.print("Quantity: ");
-            int quantity = sc.nextInt();
+            Integer quantity = sc.nextInt();
 
             Product product = new Product(productName, price);
-            OrderItem item = new OrderItem(quantity, price, product);
+            OrderItem orderItem = new OrderItem(quantity, price, product);
 
             
-            order.addItem(item);
+            order.addItem(orderItem);
             System.out.println();
             
         }

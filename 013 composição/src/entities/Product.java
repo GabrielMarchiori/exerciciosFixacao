@@ -2,24 +2,24 @@ package entities;
 
 public class Product {
 
-    private String name;
+    private String productName;
     private Double price;
 
     
     public Product() {
     }
 
-    public Product(String name, Double price) {
-        this.name = name;
+    public Product(String productName, Double price) {
+        this.productName = productName;
         this.price = price;
     }
 
     public String getName() {
-        return name;
+        return productName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String productName) {
+        this.productName = productName;
     }
 
     public Double getPrice() {
@@ -28,10 +28,6 @@ public class Product {
 
     public void setPrice(Double price) {
         this.price = price;
-    }
-
-  
-
-    
+    }    
     
 }
