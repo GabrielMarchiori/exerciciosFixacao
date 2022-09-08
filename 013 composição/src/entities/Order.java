@@ -1,8 +1,8 @@
 package entities;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import status.EnumOrderStatus;
@@ -28,8 +28,8 @@ public class Order {
     }
 
 
-    public LocalDateTime getMoment() {
-        return moment;
+    public String getMoment() {
+        return moment.format(DateTimeFormatter.ofPattern("dd/MM/yyy HH:mm:ss"));
     }
 
 
@@ -77,6 +77,18 @@ public class Order {
         }
         return sum;
     }
+
+    public String toString() {
+        return "Order moment: "+ getMoment() + String.format("%n")
+                + "Order status: "+getStatus() + String.format("%n")
+                + "Cliente: " + client + String.format("%n")
+                + "Order items:" + String.format("%n")
+                + orderItens + String.format("%n")
+                + total();
+
+    }
+
+    
 
 
 }
