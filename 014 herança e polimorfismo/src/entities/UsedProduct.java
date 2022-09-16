@@ -1,6 +1,7 @@
 package entities;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class UsedProduct extends Product {
 
@@ -15,16 +16,18 @@ public class UsedProduct extends Product {
         this.date = date;
     }
 
-    public LocalDate getDate() {
-        return date;
+    public String getDate() {
+        return date.format(DateTimeFormatter.ofPattern("(dd/MM/yyyy)"));
     }
 
     public void setDate(LocalDate date) {
         this.date = date;
     }
 
-    
+    @Override
+    public String toString() {
+        return getName() + " (used) $ " + String.format("%.2f", getPrice()) + " (Manufacture date: " + getDate() + ")";
+    }
 
-    
     
 }

@@ -1,6 +1,7 @@
 package application;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +17,8 @@ public class App {
 
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
+        
+        
 
         System.out.print("Enter the number of products: ");
         int numberProducts = sc.nextInt();
@@ -23,24 +26,28 @@ public class App {
         List<Product> products = new ArrayList<>();
 
         for(int repeat=1; repeat<=numberProducts; repeat++){
-            System.out.println("Common, used or imported (c/u/i)?");
+            System.out.println("Product #" + repeat + " data:");
+            System.out.print("Common, used or imported (c/u/i)? ");
             char option = sc.next().charAt(0);
 
-            System.out.println("Name: ");
+            sc.nextLine();
+
+            System.out.print("Name: ");
             String name = sc.nextLine();
 
-            System.out.println("Price: ");
+            System.out.print("Price: ");
             Double price = sc.nextDouble();
 
             if(option == 'u'){
-                System.out.println("Manufacture date (DD/MM/YYYY)");
-                LocalDate date = LocalDate.parse(sc.nextLine(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+                System.out.print("Manufacture date (DD/MM/YYYY): ");
+                LocalDate date = LocalDate.parse(sc.next(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+
 
                 products.add(new UsedProduct(name, price, date));
             }
 
             else if(option == 'i'){
-                System.out.println("Customs fee: ");
+                System.out.print("Customs fee: ");
                 Double customsFee = sc.nextDouble();
 
                 products.add(new ImportedProduct(name, price, customsFee));
@@ -49,14 +56,14 @@ public class App {
             else{
                 products.add(new Product(name, price));
             }
+            
+        }
 
-            System.out.println("PRICE TAGS:");
+        System.out.println("PRICE TAGS:");
             for(Product prod : products){
                 System.out.println(prod);
             }
-
-            sc.close();
-        }
-        
+            
+        sc.close();
     }
 }
