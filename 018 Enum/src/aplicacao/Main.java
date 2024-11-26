@@ -39,7 +39,11 @@ public class Main {
         int x = sc.nextInt();
         sc.nextLine();
 
-        OrdemServico os = new OrdemServico(new Date(), StatusServico.valueOf(status), new Cliente(nome, email, dataAniversario));
+        StatusServico statusServico = StatusServico.tipoStatusServico(status);
+
+        OrdemServico os = new OrdemServico(new Date(), statusServico, new Cliente(nome, email, dataAniversario));
+
+
 
         for (int i = 0; i < x; i++) {
             System.out.println("Entre com o item #" + (1+i));

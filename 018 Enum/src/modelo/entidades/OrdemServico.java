@@ -59,7 +59,7 @@ public class OrdemServico {
                 + "Criacao da OS: "
                 + getMomento()
                 + "\nStatus OS: "
-                + this.getStatus()
+                + this.status.name()
                 + this.cliente.toString()
                 + "\nOS itens:";
     }
