@@ -16,4 +16,16 @@ public class PessoaJuridica extends Pessoa {
     public void setNumeroFuncionarios(Double numeroFuncionarios) {
         this.numeroFuncionarios = numeroFuncionarios;
     }
+
+    @Override
+    public Double imposto(){
+        Double imposto = 0.0;
+        if (this.getNumeroFuncionarios() <= 10){
+            imposto = this.getSalarioAnual() * 0.14;
+        }
+        else if (this.getNumeroFuncionarios() > 10){
+            imposto = this.getSalarioAnual() * 0.16gi;
+        }
+        return imposto;
+    }
 }
