@@ -2,18 +2,18 @@ package entidades;
 
 public class PessoaJuridica extends Pessoa {
 
-    private Double numeroFuncionarios;
+    private Integer numeroFuncionarios;
 
-    public PessoaJuridica(String nome, Double salarioAnual, Double numeroFuncionarios) {
+    public PessoaJuridica(String nome, Double salarioAnual, Integer numeroFuncionarios) {
         super(nome, salarioAnual);
         this.numeroFuncionarios = numeroFuncionarios;
     }
 
-    public Double getNumeroFuncionarios() {
+    public Integer getNumeroFuncionarios() {
         return numeroFuncionarios;
     }
 
-    public void setNumeroFuncionarios(Double numeroFuncionarios) {
+    public void setNumeroFuncionarios(Integer numeroFuncionarios) {
         this.numeroFuncionarios = numeroFuncionarios;
     }
 
@@ -21,10 +21,10 @@ public class PessoaJuridica extends Pessoa {
     public Double imposto(){
         Double imposto = 0.0;
         if (this.getNumeroFuncionarios() <= 10){
-            imposto = this.getSalarioAnual() * 0.14;
+            imposto = this.getSalarioAnual() * 0.16;
         }
         else if (this.getNumeroFuncionarios() > 10){
-            imposto = this.getSalarioAnual() * 0.16gi;
+            imposto = this.getSalarioAnual() * 0.14;
         }
         return imposto;
     }

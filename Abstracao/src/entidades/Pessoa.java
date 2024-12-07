@@ -22,4 +22,9 @@ public abstract class Pessoa {
     }
 
     public abstract Double imposto();
+
+    @Override
+    public String toString() {
+        return nome + ": R$" + String.format("%.2f", imposto());
+    }
 }
